@@ -13,11 +13,11 @@ app.use('/api', itemRoutes);
 app.use('/api', subCategoryRoutes);
 
 app.get("/api", (req: Request, res: Response) => {
-    res.send("Server is running...");
+    res.send("Server is running....");
   });
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("Server is running...");
+    res.send("Server is running....");
   });
 
 export default app;
