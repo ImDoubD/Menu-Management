@@ -56,9 +56,9 @@ class SubCategoryController {
 
     async updateSubCategory(req: Request, res: Response) {
         try{
-            const identifier = req.params.identifier;
+            const id = req.params.id;
             const updatedSubCategory = await subCategoryService.updateSubCategory(
-                parseInt(identifier),
+                parseInt(id),
                 req.body
             )
             res.json(updatedSubCategory);
@@ -66,6 +66,7 @@ class SubCategoryController {
             if (error instanceof HttpException) {
                 res.status(error.status).json({ error: error.message });
             } else {
+                console.log({ error: (error as Error).message })
                 res.status(500).json({ error: 'Internal server error' });
             }
         }
