@@ -7,10 +7,10 @@ import authRoutes from './routes/authRoutes';
 const app = express();
 
 app.use(express.json());
-app.use('/api', authRoutes);
-app.use('/api', categoryRoutes);
-app.use('/api', itemRoutes);
-app.use('/api', subCategoryRoutes);
+app.use('/auth', authRoutes);
+app.use('/category', categoryRoutes);
+app.use('/item', itemRoutes);
+app.use('/subCategory', subCategoryRoutes);
 
 app.get("/api", (req: Request, res: Response) => {
     res.send("Server is running....");
