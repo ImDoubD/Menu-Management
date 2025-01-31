@@ -103,6 +103,11 @@ Item.init({
       if (!item.category_id && !item.sub_category_id) {
         throw new Error('Item must belong to either a category or subcategory');
       }
+      if(item.tax_applicability){
+        if(!item.tax){
+          throw new Error('Tax is required when tax applicability is true');
+        }
+      }
       item.total_amount = item.base_amount - item.discount;
     }
   }
