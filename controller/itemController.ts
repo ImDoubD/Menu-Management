@@ -70,9 +70,9 @@ class ItemController {
 
     async updateItem(req: Request, res: Response) {
         try{
-            const identifier = req.params.identifier;
+            const id = req.params.id;
             const updatedItem = await itemService.updateItem(
-                parseInt(identifier),
+                parseInt(id),
                 req.body
             );
             res.json(updatedItem);
