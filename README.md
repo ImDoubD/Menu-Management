@@ -1,3 +1,17 @@
+## Questions
+- Which database you have chosen and why? \
+`I have used PostgreSQL database, as the usecase in the assignment stated relations or associations between different entities and PostgreSQL handles complex relations efficiently. Firther it also provides robust JSON support with Sequelize integrations.`
+- 3 things that you learned from this assignment? \
+`I have learned about ORM intricacies (model associations, hooks, migrations), importance of layered validation (model + service layers), REST API best design practices for nested resources`
+- What was the most difficult part of the assignment? \
+`There was no such difficulty in the assignment itself, but when I searched for methods of deploying the backend, I didn't want to use my credit card so I came across platforms like Render and Choreo so when I rectified the build, deployment parts to developement and production in these services, it was a bit time consuming but again I learned a lot.`
+- What you would have done differently given more time? \
+`I would have added caching for frequent queries. Further I would have explored techniques to optimise the database, let's say using sharding and indexing practices for better searching etc. I have created the authentication APIs using JWT web tokens.`
+
+## Operation Video Link:
+https://drive.google.com/file/d/1BM-nXPZ0FTR4TCAGzgbF1KQYVGKbXG2E/view?usp=sharing
+
+
 ## Setup Instruction and Running The Application Steps 
 This project uses Node.js (22.10.2 ver) with Express (5.0.0 ver).
 ```bash
@@ -7,7 +21,6 @@ npm start
 ```
 All the required packages will be installed using this command `npm i`. \
 Always build first using `npm run build` and start the server using `npm start`, whenever changes done in code.
-
 
 
 ## API Endpoints List
