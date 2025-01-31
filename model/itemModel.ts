@@ -103,6 +103,9 @@ Item.init({
       if (!item.category_id && !item.sub_category_id) {
         throw new Error('Item must belong to either a category or subcategory');
       }
+      if(item.base_amount < item.discount){
+        throw new Error('Discount cannot be greater than base amount');
+      }
       if(item.tax_applicability){
         if(!item.tax){
           throw new Error('Tax is required when tax applicability is true');
