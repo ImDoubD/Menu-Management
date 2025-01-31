@@ -103,12 +103,21 @@ Item.init({
       if (!item.category_id && !item.sub_category_id) {
         throw new Error('Item must belong to either a category or subcategory');
       }
-      
+
       const category = await Category.findByPk(item.category_id);
       const subCategory = await SubCategory.findByPk(item.sub_category_id);
-      if(!item.tax_applicability){
-        item.tax_applicability = (category?.tax_applicability ?? false) || (subCategory?.tax_applicability ?? false);
-      }
+      // if(!item.tax_applicability){
+      //   item.tax_applicability = (category?.tax_applicability ?? false ) || (subCategory?.tax_applicability ?? false);
+      // }
+      if (!item.tax_applicability) {
+        if (subCategory?.tax_applicability) {
+          item.tax_applicability = true;
+          item.tax = subCategory.tax;
+        } else if (category?.tax_applicability) {
+            item.tax_applicability = true;
+            item.tax = category.tax;
+        }
+    }
 
       item.total_amount = item.base_amount - item.discount;
     }
