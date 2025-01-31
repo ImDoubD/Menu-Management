@@ -28,7 +28,7 @@ Always build first using `npm run build` and start the server using `npm start`,
 - Install all the given requirements as provided in the installation part.
 - The database used is PostgreSQL, as the use case provided in the assignment was relational in nature.
 - Hit the APIs given in Postman collection. \
-  (Postman Link: `https://imf-gadget-6862.postman.co/workspace/IMF-Gadget-Workspace~2c1d2ceb-6724-4b55-abd5-23126b322058/collection/34221288-1e7921ec-0682-4bee-bdd6-3a425a12fa2b?action=share&creator=34221288` )
+  (Postman Link: https://imf-gadget-6862.postman.co/workspace/IMF-Gadget-Workspace~2c1d2ceb-6724-4b55-abd5-23126b322058/collection/34221288-1e7921ec-0682-4bee-bdd6-3a425a12fa2b?action=share&creator=34221288 )
 - After registeration and login, provide the JWT token to bearer authentication in Postman. Only after that, other APIs will be accessible.
 - To start the server, use command: `npm start` \
   Hit the API's (in Postman or Thunderclient) in this order: 
