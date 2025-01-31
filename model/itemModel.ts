@@ -99,10 +99,17 @@ Item.init({
   sequelize,
   modelName: 'item',
   hooks: {
-    beforeValidate: (item) => {
+    beforeValidate: async (item) => {
       if (!item.category_id && !item.sub_category_id) {
         throw new Error('Item must belong to either a category or subcategory');
       }
+      
+      const category = await Category.findByPk(item.category_id);
+      const subCategory = await SubCategory.findByPk(item.sub_category_id);
+      if(!item.tax_applicability){
+        item.tax_applicability = (category?.tax_applicability ?? false) || (subCategory?.tax_applicability ?? false);
+      }
+
       item.total_amount = item.base_amount - item.discount;
     }
   }
